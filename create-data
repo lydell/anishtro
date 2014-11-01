@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# By Simon Lydell 2014.
+# This file is in the public domain.
+
+# Example invocation:
+#
+#     ./create-data data/en 20 10
+#
+# The above will download 20 (at most 10 at a time; you may omit this value to
+# use the default of 20) random wikipedia articles into the data/en/wiki
+# directory, creating it if needed. Unless there is a URL file in data/en you
+# will be prompted for the URL to a wikipedia Random Page. You may leave it
+# blank to use the default, English URL.
+#
+# To generate data files from a wiki directory:
+#
+#     ./create-data data/en
+#
+# The above creates the following files in data/en: articles.txt, text.txt,
+# chars.json, pairs.json and words.json. Unless there is a LETTER file in
+# data/en you will be prompted for a regex character set that defines what a
+# letter is. You may leave it blank to use the default, English set. As an
+# example, you may use `[a-zåäö]` for Swedish.
+
+INSTALL=$(dirname $0)/node_modules
+
+DIR=${1:-.}
+
+get() {
+  if [[ ! -f $DIR/$1 ]]; then
+    read -p "$1: " value
+    echo $value >$DIR/$1
+  else
+    value=$(head -n 1 $DIR/$1)
+  fi
+  echo $value
+}
+
+if [[ $2 ]]; then
+  mkdir -p $DIR/wiki
+  node $INSTALL/wikipedia-gather/wikipedia $DIR/wiki $2 ${3:-20} $(get URL)
+else
+  node $INSTALL/wikipedia-gather/list $DIR/wiki >$DIR/articles.txt
+  node $INSTALL/wikipedia-gather/concat $DIR/wiki >$DIR/text.txt
+  node $INSTALL/text-frequencies-analysis/analyse $DIR $(get LETTER) <$DIR/text.txt
+fi

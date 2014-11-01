@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "anishtro",
+  "version": "1.0.0",
+  "author": "Simon Lydell",
+  "main": "scripts/repl.js",
+  "scripts": {
+    "test": "mocha --ui tdd scripts/test-layout.js"
+  },
+  "dependencies": {
+    "text-frequencies-analysis": "^1.0.0",
+    "wikipedia-gather": "lydell/wikipedia-gather"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  }
+}
