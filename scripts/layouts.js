@@ -41,14 +41,14 @@ module.exports = {
 
   // Attempts.
   ranshtio: [
-    " xulcj", "kpmy- ",
-    " ransv", "bhtio ",
-    " ;,wgz", "qfd./ "
-  ],
-  ranshtio: [
     " qupmj", "kfly- ",
     " ransv", "bhtio ",
     " ;,cgz", "xdw./ "
+  ],
+  ranshtio2: [
+    " xulcj", "kpmy- ",
+    " ransv", "bhtio ",
+    " ;,wgz", "qfd./ "
   ],
   inar: [
     " xpylv", "jumcq ",
