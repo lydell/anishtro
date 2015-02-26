@@ -74,6 +74,7 @@ suite("layout functions", function() {
       ["fg", 14]
     ]
     assert.equal(analyseLayout.homeRow(pairs, "abcd", "efgh"), 40)
+    assert.equal(analyseLayout.homeRow(pairs, "abcd", "fegh"), 26)
   })
 
 })

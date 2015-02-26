@@ -150,7 +150,9 @@ analyseLayout.homeRow = function homeRow(pairs, left, right) {
 
 function adjacentRolls(pairs, chars) {
   var find = findPair.bind(undefined, pairs)
-  return combinations(chars.split("")).map(find)
+  return chars.split("").slice(0, -1).map(function(char, index) {
+    return char + chars[index + 1]
+  }).map(find)
 }
 
 module.exports = analyseLayout
