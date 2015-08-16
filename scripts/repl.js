@@ -52,6 +52,7 @@ module.exports = function(dir, obj) {
     "  relative (function)",
     "  filter (function)",
     "  layout (function)",
+    "  homeRow (function)",
     "  layouts (map)"
   ]
 }
