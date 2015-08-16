@@ -45,8 +45,8 @@ The layout is suitable if:
   of a “flow”—as opposed to punctuation characters, which are typed more or less
   one by one.
 
-- You like “rolling” (horizontally) between the uppercase letters below, in
-  either direction. (Again, mirror it for the right hand.)
+- You like “rolling” (horizontally) between the keys marked with uppercase
+  letters, in either direction. (Again, mirror it for the right hand.)
 
       qLUCj
       ANISv
