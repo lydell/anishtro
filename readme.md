@@ -131,14 +131,14 @@ layout](data.md#analyzing-a-full-layout.)).
 
 | Layout     | Same finger | Rolls  |
 | ---------- | ----------: | -----: |
-| [QWERTY]   |       7.78% |  6.67% |
+|  QWERTY    |       7.78% |  6.67% |
 | [QGMLWB]   |       5.42% |  4.04% |
 | [Dvorak]   |       2.85% |  5.30% |
 | [Workman]  |       2.86% |  8.54% |
 | [Colemak]  |       1.35% |  7.99% |
 | [Arensito] |       1.28% | 13.64% |
 | [Maltron]  |       1.04% | 13.67% |
-| [anishtro] |       0.89% | 14.65% |
+|  anishtro  |       0.89% | 14.65% |
 
 “Same finger” is the percentage of all your keypresses that will be performed by
 the same finger (excluding typing the _same_ letter twice in a row), which tells
