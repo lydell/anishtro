@@ -72,6 +72,10 @@ reason that a symmetrical keyboard should be used.
 I strongly recommend putting space on a thumb key, which is why at least one key
 per thumb is needed.
 
+I recommend reading the [Most Ergonomic Keyboard ; Most Efficient Keyboard][proword]
+article by “Joe”, since it was a big inpiration for this layout.
+
+[proword]: http://mostergonomickeyboard.blogspot.se/2011/02/most-ergonomic-and-efficient-keyboard.html
 
 Customization
 =============
