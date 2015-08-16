@@ -8,10 +8,10 @@
     "test": "mocha --ui tdd scripts/test-layout.js"
   },
   "dependencies": {
-    "text-frequencies-analysis": "^1.0.0",
+    "text-frequencies-analysis": "^2.0.0",
     "wikipedia-gather": "lydell/wikipedia-gather"
   },
   "devDependencies": {
-    "mocha": "^2.0.1"
+    "mocha": "^2.2.5"
   }
 }

@@ -60,6 +60,11 @@ module.exports = {
     " anisv", "bhtro ",
     " /;ygx", "zfd., "
   ],
+  anishtro2: [
+    " -lucj", "kdgwq ",
+    " anisv", "bhtro ",
+    " /;yfx", "zpm., "
+  ],
 
   // Additional.
   anishtroåäö: [

@@ -1,11 +1,15 @@
 Data
 ====
 
-This file contains data to back claims in readme.md. See the “Tools” section in
-that file, as well as scripts/repl.js for how to re-run the samples below.
+This file contains data to back claims in [readme.md]. See the [“Tools”] section
+in that file, as well as [scripts/repl.js] for how to re-run the samples below.
+
+[readme.md]: readme.md
+[scripts/repl.js]: scripts/repl.js
+[“Tools”]: readme.md#tools
 
 <h3 id="aq-oq">
-  “aq” is more common than “oq”
+  AQ is a _tiny_ bit more common than OQ
 </h3>
 
     > filter(relative(pairs), /aq|oq/)
@@ -16,8 +20,10 @@ that file, as well as scripts/repl.js for how to re-run the samples below.
   Analyzing a full layout
 </h3>
 
-The layouts are defined in scripts/layouts.js. To analyze, for example, the
+The layouts are defined in [scripts/layouts.js]. To analyze, for example, the
 anishtro layout:
+
+[scripts/layouts.js]: scripts/layouts.js
 
     > layout(layouts.anishtro)
     { sameFinger:
@@ -76,8 +82,8 @@ anishtro layout:
       sameFingerTotal: 0.892288617303734,
       rollsTotal: 14.65058484145166 }
 
-<h3 id="most-common-letters">
-  The most common letters of the English alphabet are “aehinorst”
+<h3 id="letters">
+  The letters of the English alphabet, ordered by how common they are
 </h3>
 
     > relative(filter(chars, /[a-z]/))
@@ -108,25 +114,170 @@ anishtro layout:
       [ 'z', 0.1722558856356022 ],
       [ 'q', 0.09768806586174034 ] ]
 
-<h3 id="most-common-pairs">
-  “de” is one of the ten most common pairs
+<h3 id="iy">
+  IY is uncommon
 </h3>
 
-    > relative(pairs).slice(0,10)
-    [ [ 'er', 3.781865233783989 ],
-      [ 'ht', 3.1143912946997787 ],
-      [ 'in', 3.0370736667978786 ],
-      [ 'eh', 2.797348932553786 ],
-      [ 'an', 2.7104361081469164 ],
-      [ 'it', 2.242793128080614 ],
-      [ 'or', 2.2012958429263745 ],
-      [ 'no', 2.1511473630796494 ],
-      [ 'de', 2.1164908581829955 ],
-      [ 'ar', 2.099149674202991 ] ]
+    > filter(relative(pairs), /i/, /y/)
+    [ [ 'iy', 0.032070198561082605 ] ]
 
-<h3 id="most-common-pairs">
-  The letter E is part of 24% of all letter pairs
+Words containing YI are mostly verbs ending with “y” plus the “ing” suffix,
+such as “saying:”
+
+    > pairWords('iy').split(' ').filter(function(word){return /ing$/i.test(word)}).join(' ')
+    'plaYIng saYIng flYIng trYIng qualifYIng studYIng carrYIng buYIng paYIng
+    lYIng applYIng identifYIng varYIng bullYIng dYIng accompanYIng destroYIng
+    displaYIng occupYIng staYIng underlYIng drYIng laYIng marrYIng emploYIng
+    lobbYIng crYIng portraYIng denYIng YIelding satisfYIng tYIng enjoYIng
+    praYIng relYIng supplYIng copYIng defYIng deploYIng outlYIng roleplaYIng
+    YIng conveYIng implYIng vYIng certifYIng classifYIng decaYIng horrifYIng
+    modifYIng overlaYIng parrYIng preYIng rallYIng straYIng unifYIng burYIng
+    complYIng downplaYIng intensifYIng justifYIng quarrYIng relaYIng specifYIng
+    spraYIng surveYIng testifYIng worrYIng betraYIng clarifYIng delaYIng
+    dizzYIng embodYIng emptYIng ferrYIng glorifYIng jianYIng levYIng quantifYIng
+    replYIng signifYIng spYIng acidifYIng anYIng beatbullYIng beixiaoYIng
+    belYIng dairYIng disobeYIng falsifYIng fructifYIng frYIng gaolIYIng glorYIng
+    holidaYIng magnifYIng multiplYIng notifYIng ogcbuYIng overlYIng parodYIng
+    partYIng purifYIng putrefYIng simplifYIng solidifYIng splaYIng swaYIng
+    tallYIng terrifYIng testilYIng unsatisfYIng unwearYIng unYIelding xiheYIng
+    zhaoquanYIng'
+
+
+There are also a bunch of really unusual words containing the pair:
+
+    > pairWords('iy').split(' ').filter(function(word){return !/ing$/i.test(word)}).join(' ')
+    'pinYIn shunYI mIYu YIeld YIu prIYa YIelded YIn bIYa YIddish ramataYIm rIYu
+    YIelds YIg YI hasYIm izumIYa greYIsh IYan kamIYa lobbYIst maYI navoIY
+    qadIYani rangrasIYa saYIngs YImou arzuIYeh essaYIst halilIYe mIYa mIYake
+    mIYan dIY graYIsh muhammadIYah obarIYon rIYadh thanlYIn YItzhak abIYari
+    aIYyaa chirupulIYur copYIst hintlIYan jabraYIl jadhuYIh krIYa kuangYIn kYI
+    puthIYa puYI rehalIYa taIY YIteng yulIYa aalIYah adIYIah amamIYa amIYumi
+    ashIYa asYIk ataYIm aYIa babYIsh baranYI chiaYI chIYoda chonglIYImti crYIn
+    dIYa dmitrIY ercIYesspor geomYIdae gongYI ichinomIYa jayasurIYa kIYoshi
+    kurIYama malvIYa mccarthYIsm mIYauchi mIYazaki nadaanIYaan novorossIYsk
+    nurIYe nYI olimpIYskIY orIYa panaYIotis perIYanayaki pIYashiri prIYamani
+    quoYIi ridanIYa rIYashi rIYaz rkIYe saYIt sergIYevo sirupulIYur sIYa sofIYa
+    suprIYa therIYale tomboYIsh trotskYIst verkhnIY YIgal YIvo yorIYasu yuanYI
+    yurIY aamaruvIYappan adhinIYam aganYIn ahmadIYya aIYegbeni akIYama akIYo
+    alIYah alIYev alophomYIa aponaptrIYa arabIYum arIYasu armyanskIY avihaYIl
+    aYIokambos azizIYe badzheyskIYe baileYI baiomYIni baIYun balIYe bamIYan
+    baYIlvan beIYzid bharathIYa bharatIYa bIYogh bIYori blepharomYIa boYIsh
+    boYIta callawaYIn caluromYInae canendIY capromYIdae chaIYo chaoYIn chenYI
+    cherukallaYI chettIYar chongYI chouYIn congYI ctenomYIdae davetIYe davYI
+    deviprIYathird dinomYIdae dIYana dIYarbak dYIn echimYId echimYIdae eizarIYa
+    elIYahu erinnYIs erquprIYa fujIYama fujIYoshida gennadIY geoffroYI
+    gratifYIngly graYI graYIa greenshunYI gunaprIYadharmapatni haaYIn haIY
+    haIYong hajIYev harbIYei harbIYya hertzlIYah herzlIYa hibIYa hIYama hIYe
+    hobbYIsts hoseynIYeh hsanIYe ilIYan ilYIch imtIYaz islamIYah islamIYat IYapd
+    IYer IYua jatIYo jIY jIYao jnanakIYa junYI kaavIYa kaliuzhnIY kalIYa kalIYur
+    kanYIragwa kasIYIl kaspIYsk katsIYannis katsIYIannis keffIYeh kerenYI keYId
+    kilIYana kilIYe kIYohime kIYoku kIYomi kIYomoto krIYananda ksahtrIYa kubinYI
+    kulIYat kYIv ladanYI lavrentIY lIYakat mandIY marIYa marutvatIYa maskelIYa
+    mIYahira mIYako mIYamotois mIYamura mIYata mIYazak mIYazawa mIYori mIYota
+    mnYIka mwIYawamatende mYInt mYIophobus nafYIsh naharIYa nahIYa nandIYa
+    naraYIv naYIri nedorazumenIYe nemunuIYeh newshunYI nishIYatsushiro nIY
+    nIYodo nizhnYI norIYasu norIYo novgorodskIY nurgalIYevich nzeYI omIYa
+    organizatsIYa orithYIa owshIYan partYIsntover pawiIY pcIYra peIYan perIYa
+    pIYarangsit pIYush plaYInginfog podozranIYami polemicheskIYe premaYIl
+    prIYadharshini prIYamvadha prIYananda prIYank prIYanka prokofIYevich
+    qadisIYyah qadIYanis rashtrIYa ratIYa rezvanIYeh rhegYI rowdYIsm ruqaIYa
+    russkIY sadIYa sagdIYev sanaYI saYIgh sayYId seIYuu seYIn shahanshahIYe
+    shaoYI shIYuan sIY sIYahu sIYum somaIYa sorIYa spipIYus strYI suYIn
+    szechenYI taIYo tamIYa tanfidzIYah tenYImia tenYImias territorIY
+    thryonomYIdae thuraIYur tIYl tolkappIYam toshIYa troitskIY trotskYIsts
+    tsubakIYama tughIYa tylomYInae uchIYama umumIYe upravlenIYe vazhkaIYIl
+    venIYan venkitanarayanaIYer viharIYa vserossIYskaya weIYue weldIYa wenYI
+    yeghiaYIan YIbin YIdukou YIed YIfat YIngcai YInskoye YInxu YIooken YIrs
+    YIshuv YIsrael YIt YItzchak YIwu YIYang YIzhuang YIzong ymIYmah yukIYa
+    zakarIYa zhaoYI'
+
+<h3 id="au">
+  AU is a bit more common than IY
 </h3>
 
-    > sumTuples(filter(relative(pairs), /e/))
-    24.10591389979305
+    > filter(relative(pairs), /a/, /u/)
+    [ [ 'au', 0.3039427205563248 ] ]
+    > pairWords('au').split(' ').slice(0, 100).join(' ')
+    'janUAry AUgust becAUse febrUAry langUAge AUstralia AUstralian pAUl
+    eventUAlly usUAlly dAUghter sqUAre individUAl AUthor annUAl AUthority
+    sqUAdron cAUsed lAUnched qUAlity langUAges AUdio individUAls sitUAted
+    gradUAted actUAlly cAUse AUstria gradUAte sitUAtion qUArter AUthorities
+    gUArd headqUArters tAUght AUdience visUAl AUstrian jUAn beAUtiful actUAl
+    bureAU eqUAl cAUght cAUses sqUAd AUstin cAUsing lAUnch dAUghters qUAlified
+    qUArterback disambigUAtion beAUty AUtonomous AUdit AUthors annUAlly sexUAl
+    sAUdi dUAl qUAlifying unusUAl spiritUAl pAUlo intellectUAl hanAU lithUAnia
+    renAUlt gradUAting restAUrant gradUAlly headqUArtered valUAble assAUlt
+    AUtomobile manUAl usUAl gUArdian mAUrice sAUk yUAn AUtomatic ecUAdor
+    lithUAnian AU evalUAtion qUArterly drAUghts qUArtet sitUAtions AUdiences
+    AUtomatically obitUAry vanUAtu gUArds qUAlify AUckland eqUAlity gAUge'
+
+<h3 id="uy">
+  UY is uncommon
+</h3>
+
+This only common words seem to be “buy” and “guy”.
+
+    > filter(relative(pairs), /u/, /y/)
+    [ [ 'uy', 0.018233459665776802 ] ]
+    > pairWords('uy')
+    'gUYver gUY bUY YUgoslavia YUan YUuichi YU bUYing YUgoslav miYU rUYs lapUYan
+    gUYs YUhuan dupUY gUYot chanYU gUYana ngUY YUkino tetsUYa masYUmi riYU
+    hYUndai kazUYa schUYler UYl YUkon YUri bUYers litUYa nYUngar rYUichi YUme
+    YUng brUYning bUYer kikUYU kUYavian rYU YUji YUuki geldenhUYs saYUri shUYU
+    tokYU wenYUan YUki YUn YUnnan YUsuf gUYenne gUYvers kakYUusei katYUsha
+    pantYUkhov shibUYa tatsUYa YUcat YUeyang YUh YUk YUke YUkihiro YUko YUle
+    YUnus aYUntamiento bUYout bUYs bYU cheqUY chirupuliYUr elhUYar fYUmancho
+    harguindegUY hUYgen jadhUYih kohgilUYeh kozlukUYU lusagYUgh orYUr pUYi
+    schUYlkill takaYUki torYU UYezd YUanxin YUbeshi YUe YUen YUkariko YUkikazu
+    YUkio YUliya YUma YUrzinov YUshi YUzuki amiYUmi aYUrvedic azurdUY birYUkov
+    boUYgues brachYUra caYUse cUYUna dUY dUYshebaev fayYUm grUYs grUYter
+    guangYUn gUYanese hiroYUki houshaYU hUYck hUYnen jonghYUn kenYU koduvaYUr
+    koUYoumdjian kYUn kYUshu mUY mUYbridge nanYUki nYU otUYo oUYang praYUrasakdi
+    rYUkYU rYUn rYUtsu salambUYan shanYU sirupuliYUr taoYUan trYUmf tUY UYesaka
+    vaYU velikoustYUgsky wisegUY YUans YUanyi YUcatan YUeyanglou YUfu YUga YUi
+    YUichi YUkana YUletide YUlman YUmi YUnzhong YUrcak YUriy YUsra YUuchi
+    YUuwaku YUxian zongYU akYUrt anusUYa arabiYUm aYU aYUb aYUmi baiYUn benYUs
+    boUYer bUYouts bUYUng bYUng camUY caYUa caYUcas chengYUn chikYUu choUYin
+    chUY crUYwagen cUYahoga derinkUYU dmanYUrdu dupUYtren dUYUng dUYvil eikYUu
+    faYUn frelinghUYsen fukUYama fUYang fUYU fUYUan fUYUshiba goUYen guangYUan
+    gUYancourt gUYotat gUYots gUYra gUYton gyadYUk gYU gYUla gYUrgich haklUYt
+    hanYU harerUYa hengYUan hUY hUYn hYUk hYUn hYUndae inUYasha iYUa jaYUYa
+    jYUtping kagUYa kagYU kalapUYa kaliYUr kashUYana katsUYama kazUYoshi
+    kazUYUki kelYUdvarhely kinrYU kirYUu kitakYUshu kokUYou krYUkov kUYavia
+    kUYtun kUYUbi kUYvashev kyorYU kyourYUujidai kYU kYUnghyang kYUstendil
+    labrUYere lepUYan liangYU lusaghYUgh lusagYUkh lYUbertsy lYUbov
+    maguindanaolapUYan magUY manaYUnk marYU matsUYama maYUmi maYUranathar
+    meeraYUde meYUhas mitsUYa mUYe mUYejebo mUYo naoYUki naUYoma neznaYUshchihk
+    ngUYen ngUYens nobUYoshi nobUYUki nYUngars ogcbUYing okUYama patsYUkov paUY
+    pavlYUchenkova piYUsh polYUrethane praYUrsak pUY qayYUm rangsitpraYUrasak
+    rUY rUYsplantsoen rYUhaku rYUnosuke rYUroh rYUta rYUuketsu seiYUu semyoYU
+    shenYU shiYUan shUY siYUm slUYs slUYter spipiYUs spUYten suraYUd sUYa sUYama
+    sUYin sYUnik sYUriah takUYa thuraiYUr trYUmph tsUYoshi tsUYUri tUYa tYUmen
+    tYUnina UYarsky UYs velaYUdham vidYU vUYk wangYUn weiYUe xiduoYU yacUY
+    yanYUan yongYUe YUanhong YUanYUan YUba YUcatanensis YUcatanica YUcca YUchi
+    YUddham YUdhoyono YUdoko YUfuin YUg YUgendren YUggera YUgo YUgoslavian YUgur
+    YUjing YUkari YUkawa YUkie YUkiko YUkiya YUl YUlong YUlung YUmiko YUnan
+    YUnchuan YUnesabad YUngas YUngay YUngping YUnis YUny YUppie YUr YUrchenko
+    YUriev YUrii YUrman YUrYUzan YUsa YUsai YUsefabad YUshu YUsif YUsri YUssof
+    YUsupov YUtang YUubae YUuka YUvarlak YUxi YUzhin YUzhou YUzhouzhen YUzu
+    zhanYUan zYUranger'
+
+<h3 id="iu">
+  IU is uncommon a _bit_ more common than UY
+</h3>
+
+    > filter(relative(pairs), /i/, /u/)
+    [ [ 'iu', 0.13753977092567524 ] ]
+    > pairWords('iu').split(' ').slice(0,100).join(' ')
+    'bUIlt bUIlding stadIUm gUItar loUIs reqUIred bUIldings gUIde acqUIred
+    qUIckly circUIt eqUIpment qUIte bUIld loUIsiana distingUIshed reqUIrements
+    eqUIvalent medIUm reqUIres lUIs sUIcide frUIt gUItarist trIUmph qUIntilian
+    continUIng crUIser loUIse belgIUm reqUIre eqUIpped gUItars gUIlty
+    battlecrUIsers cUIsine qUIck rebUIlt sportatorIUm sUIt pursUIt sUIte gUInea
+    yuUIchi crUIsers rUIns qUIto acqUIsition reqUIring sUItable tUItion IUcn
+    circUIts gUIdance eqUIty gUIded mcgUInn pengUIn acqUIre liqUId lIU julIUs
+    lingUIstic loUIsville lawsUIt recrUIted argUIng flUId inqUIry qUIt
+    shipbUIlding cIUdad crUIse gUIdelines hUI nlIU qUIet distingUIsh frUIts
+    issUIng uranIUm gIUseppe millennIUm symposIUm bUIlder continUIty gUIld
+    lingUIstics reqUIrement sUIted ensUIng pIUs pursUIng qUIncy gUIllermo qUInn
+    acqUIring consortIUm cUIsines gUIdes'

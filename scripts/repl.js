@@ -16,6 +16,7 @@
 var tools   = require("text-frequencies-analysis")
 var layout  = require("./layout")
 var layouts = require("./layouts")
+var fuzz    = require("./fuzz")
 
 var rollOpportunities = [
   "  >>  ",
@@ -40,6 +41,7 @@ module.exports = function(dir, obj) {
   var pairs     = tools.relative(obj.pairs)
   obj.layout    = layout.bind(null, rollOpportunities, pairs)
   obj.homeRow   = layout.homeRow.bind(null, pairs)
+  obj.fuzz      = fuzz.bind(null, obj.layout)
   obj.layouts   = layouts
 
   return [
@@ -53,6 +55,7 @@ module.exports = function(dir, obj) {
     "  filter (function)",
     "  layout (function)",
     "  homeRow (function)",
+    "  fuzz (function)",
     "  layouts (map)"
   ]
 }
