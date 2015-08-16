@@ -11,7 +11,7 @@
 //     > require("./")("data/sv", sv={})
 //
 // See layout.js for information on the `layout` and `homeRow` functions
-// provided below.
+// provided below. Also see data.md for examples.
 
 var tools   = require("text-frequencies-analysis")
 var layout  = require("./layout")
