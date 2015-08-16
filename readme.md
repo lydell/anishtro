@@ -45,20 +45,23 @@ The layout is suitable if:
   of a “flow”—as opposed to punctuation characters, which are typed more or less
   one by one.
 
+- You agree on that the single most important characteristic of a layout is to
+  have all the most common letters on the home keys.
+
+- You agree on that the second most important characteristic of a layout is to
+  avoid using the same finger twice in a row.
+
+- You are looking for a layout that is “fully optimized,” not a compromise
+  between comfort and QWERTY similarity. This also means that you are ready to
+  re-learn your typing from scratch, since only two letters remain on their
+  QWERTY positions: a and q. (You can swap g and v if you want yet two, though.)
+
 - You like “rolling” (horizontally) between the keys marked with uppercase
   letters, in either direction. (Again, mirror it for the right hand.)
 
       qLUCj
       ANISv
       ··YGx
-
-- You agree on that the single most important characteristic of a layout is to
-  have all the most common letters on the home keys.
-
-- You are looking for a layout that is “fully optimized,” not a compromise
-  between comfort and QWERTY similarity. This also means that you are ready to
-  re-learn your typing from scratch, since only two letters remain on their
-  QWERTY positions: a and q. (You can swap g and v if you want yet two, though.)
 
 - You don’t care about other metrics that some other keyboard analysers use,
   such as “finger travel distance,” “hand balancing” and “bottom row penalties.”
