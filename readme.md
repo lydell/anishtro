@@ -52,6 +52,9 @@ The layout is suitable if:
       ANISv
       ··YGx
 
+- You agree on that the single most important characteristic of a layout is to
+  have all the most common letters on the home keys.
+
 - You are looking for a layout that is “fully optimized,” not a compromise
   between comfort and QWERTY similarity. This also means that you are ready to
   re-learn your typing from scratch, since only two letters remain on their
