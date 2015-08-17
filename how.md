@@ -369,6 +369,7 @@ same finger usage and rolls. So ultimately, I created my own tools:
 [text-frequencies-analysis], as well as the scripts in this repository. See
 the [readme] for details on how to use them.
 
+[patorjk]: http://patorjk.com/keyboard-layout-analyzer/
 [readme]: readme.md
 
 Maltron rocks
