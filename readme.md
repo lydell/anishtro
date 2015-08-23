@@ -118,7 +118,7 @@ It seems like you can create endless variations, all with the same base:
     a  n  i  s  bv   bv h  t  r  o
     ·  ·  y  fg xz   xz       ·  ·
 
-       e   ·
+             e          ·
 
 The keys with two letters should have either of those two (depending on how the
 others are placed). The empty keys should have one of D, F, G, L, M and P.
