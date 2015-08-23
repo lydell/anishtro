@@ -13,6 +13,7 @@
 // See layout.js for information on the `layout` and `homeRow` functions
 // provided below. Also see data.md for examples.
 
+var path    = require("path")
 var tools   = require("text-frequencies-analysis")
 var layout  = require("./layout")
 var layouts = require("./layouts")
