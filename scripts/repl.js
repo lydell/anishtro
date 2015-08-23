@@ -28,21 +28,22 @@ module.exports = function(dir, obj) {
   dir = path.resolve(dir)
   obj = obj || global
 
-  obj.chars     = require(dir + "/chars")
-  obj.words     = require(dir + "/words")
-  obj.pairs     = require(dir + "/pairs")
+  obj.chars      = require(dir + "/chars")
+  obj.words      = require(dir + "/words")
+  obj.pairs      = require(dir + "/pairs")
 
-  var words     = obj.words.map(function(tuple) { return tuple[0] })
-  obj.pairWords = tools.pairWords.bind(null, words)
-  obj.sumTuples = tools.sumTuples
-  obj.relative  = tools.relative
-  obj.filter    = tools.filter
+  var words      = obj.words.map(function(tuple) { return tuple[0] })
+  obj.pairWords  = tools.pairWords.bind(null, words)
+  obj.sumTuples  = tools.sumTuples
+  obj.sortTuples = tools.sortTuples
+  obj.relative   = tools.relative
+  obj.filter     = tools.filter
 
-  var pairs     = tools.relative(obj.pairs)
-  obj.layout    = layout.bind(null, rollOpportunities, pairs)
-  obj.homeRow   = layout.homeRow.bind(null, pairs)
-  obj.fuzz      = fuzz.bind(null, obj.layout)
-  obj.layouts   = layouts
+  var pairs      = tools.relative(obj.pairs)
+  obj.layout     = layout.bind(null, rollOpportunities, pairs)
+  obj.homeRow    = layout.homeRow.bind(null, pairs)
+  obj.fuzz       = fuzz.bind(null, obj.layout)
+  obj.layouts    = layouts
 
   return [
     "Created the following:",
@@ -51,6 +52,7 @@ module.exports = function(dir, obj) {
     "  pairs (tuples)",
     "  pairWords (function)",
     "  sumTuples (function)",
+    "  sortTuples (function)",
     "  relative (function)",
     "  filter (function)",
     "  layout (function)",
