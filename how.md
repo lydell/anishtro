@@ -345,6 +345,9 @@ they used as a large ZIP file to download. However, it didn’t feel right to ju
 take some random source from somewhere. I would have no idea where it came from,
 or how representative it’d be.
 
+(Note added afterwards: See the [“Other data”] section for comparisons between
+my data and two other good data sources.)
+
 I needed something written in _contemporary_ English, on a variety of different
 topics (in order not to bump certain words more than “natural”) written by lots
 of different people. That should probably give a good statistical average. I
@@ -357,6 +360,8 @@ used. Best of all, there’s a “random article” feature!
 
 All I needed to do was to download lots of articles. I made a script called
 [wikipedia-gather] to automate it.
+
+[“Other data”]: #other-data
 
 Analyzing the data and analyzing keyboard layouts
 -------------------------------------------------
@@ -753,11 +758,38 @@ let the computer generate and test them all in no time at all.
 I wrote a little program that does that, and here is the result:
 
     > fuzz()
-    { sameFingerTotal: 0.8139623299309612,
-      rollsTotal: 14.664809526297303,
-      layout: [ ' qluc    dgw- ', ' anisv  bhtro ', ' /?yf    pm., ' ] }
+    { leastSameFinger:
+       [ { sameFingerTotal: 0.8139623299309612,
+           rollsTotal: 14.664809526297303,
+           layout: ' qluc   dgw-  |  anisv bhtro  |  /?yf   pm., ' },
+         { sameFingerTotal: 0.8139623299309612,
+           rollsTotal: 14.662210288430053,
+           layout: ' qluc   pmw-  |  anisv bhtro  |  /?yf   dg., ' },
+         { sameFingerTotal: 0.8139623299309612,
+           rollsTotal: 14.416524118082469,
+           layout: ' qluc   pgw-  |  anisv bhtro  |  /?yf   dm., ' },
+         { sameFingerTotal: 0.8139623299309612,
+           rollsTotal: 14.41392488021522,
+           layout: ' qluc   dmw-  |  anisv bhtro  |  /?yf   pg., ' } ],
+      mostRolls:
+       [ { sameFingerTotal: 2.0484063438990834,
+           rollsTotal: 14.731277599121482,
+           layout: ' qguc   dlw-  |  anisv bhtro  |  /?yf   pm., ' },
+         { sameFingerTotal: 2.116710694221519,
+           rollsTotal: 14.731277599121482,
+           layout: ' qguc   dlw-  |  anisb vhtro  |  /?yf   pm., ' },
+         { sameFingerTotal: 2.309558626133384,
+           rollsTotal: 14.731277599121482,
+           layout: ' qguc   dlw-  |  anisb vhtro  |  /?yf   mp., ' },
+         { sameFingerTotal: 2.3884151063049486,
+           rollsTotal: 14.731277599121482,
+           layout: ' qguc   dlw-  |  anisv bhtro  |  /?yf   mp., ' } ] }
 
-The above is a tiny bit better than what I came up with, but not enough to be
+The ones with the most rolls are clearly not worth it when it comes to same
+finger usage. The one with the most rolls out of the layouts with least same
+finger usage only has a _tiny_ bit fewer rolls, making it the obvious winner.
+
+That one is a tiny bit better than what I came up with, but not enough to be
 worth re-learning, I think. For completeness sake I decided to create anishtro2
 from it: A fully optimized layout. While at it, I took the liberty to make
 another little change.
@@ -791,6 +823,30 @@ I don’t think I’ll bother re-learning—the difference is too little to be w
 it. Besides, anishtro might turn out as the better one if I download new text to
 analyze. Who knows.
 
+Other data
+----------
+
+A short time after discovering anishtro2, I came across two really good data
+sources, and decided to run my analyzer with that data and see what the
+differences would be. I didn’t feel like re-checking everything from scratch,
+but I made _some_ comparisons.
+
+Both of them `fuzz()`ed out the same layout, although a different one
+than anishtro2:
+
+    ·pucj kldwq
+    anisb vhtro
+    ··yfz xmg··
+
+       e   ·
+
+Unlike anishtro2 compared to anishtro, B and V have swapped places, as well as X
+and Z. Apart from D, F, G, M and P, this time L has also moved.
+
+You may read more about these data sources and see more comparisons in the
+[“Numbers”] section of the [readme].
+
+[“Numbers”]: readme.md#numbers
 [TECK]: https://www.trulyergonomic.com/store/index.php
 [Arensito]: http://www.pvv.org/~hakonhal/main.cgi/keyboard
 [Colemak]: http://colemak.com/

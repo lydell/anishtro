@@ -3,8 +3,8 @@
 
 // In how.md you can read about how I had managed to place many of the letters,
 // but then had to resort to trial and error. This program generates all 480
-// possible layouts from that point on, analyses them all and returns the best
-// of them (anishtro2).
+// possible layouts from that point on, analyses them all and returns the ones
+// with the lowest same finger usage and the ones with the most rolls.
 
 module.exports = function fuzz(layout) {
   var possibilities = []
@@ -21,8 +21,7 @@ module.exports = function fuzz(layout) {
     possibilities.push(["g", "v", "b"].concat(combination))
   })
 
-  var smallest = null
-  return possibilities
+  var results = possibilities
     .map(function(p) {
       var template = [
         " q" + p[3] + "u" + "c"  + " " ,   " "  + p[4] + p[5] + "w- ",
@@ -33,15 +32,16 @@ module.exports = function fuzz(layout) {
       delete analysis.sameFinger
       delete analysis.rolls
       analysis.layout = [
-        template[0] + "  " + template[1],
-        template[2] + "  " + template[3],
-        template[4] + "  " + template[5]
-      ]
+        template[0] + " " + template[1],
+        template[2] + " " + template[3],
+        template[4] + " " + template[5]
+      ].join(" | ")
       return analysis
     })
-    .sort(function(a, b) {
-      return a.sameFingerTotal - b.sameFingerTotal || b.rollsTotal - a.rollsTotal
-    })[0]
+  return {
+    leastSameFinger: find(results, compareSameFinger, compareRolls     ),
+    mostRolls:       find(results, compareRolls,      compareSameFinger)
+  }
 }
 
 function combinations(letters) {
@@ -57,4 +57,25 @@ function combinations(letters) {
     })
     return results
   }
+}
+
+function find(array, compareFn, sortFn) {
+  var results = [array[0]]
+  array.slice(1).forEach(function(item) {
+    var comparison = compareFn(item, results[0])
+    if (comparison === 0) {
+      results.push(item)
+    } else if (comparison < 0) {
+      results = [item]
+    }
+  })
+  return results.sort(sortFn)
+}
+
+function compareSameFinger(a, b) {
+  return a.sameFingerTotal - b.sameFingerTotal
+}
+
+function compareRolls(a, b) {
+  return b.rollsTotal - a.rollsTotal
 }

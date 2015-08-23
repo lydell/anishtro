@@ -19,20 +19,6 @@ suggestion, though (␣ means space):
 
        e   ␣
 
-anishtro was made in the Spring of 2014. In the Summer of 2015, I found an even
-more optimal layout, which I call anishtro2:
-
-    ·lucj kdgwq
-    anisv bhtro
-    ··yfx zpm··
-
-       e   ·
-
-However, the differece is so small that I cannot even be certain that it
-actually _is_ better. It exists mostly for the sake of completeness. Between the
-Spring of 2014 and the Summer of 2015 I’ve used anishtro and never looked back.
-I don’t think it’s worth re-learning.
-
 
 Who should use it?
 ==================
@@ -99,6 +85,48 @@ reason that a symmetrical keyboard should be used.
 I strongly recommend putting space on a thumb key, which is why at least one key
 per thumb is needed.
 
+
+Variations
+==========
+
+anishtro was made in the Spring of 2014. In the Summer of 2015, I found an even
+more optimal layout, which I call anishtro2:
+
+    ·lucj kdgwq
+    anisv bhtro
+    ··yfx zpm··
+
+       e   ·
+
+However, the differece is so small that I cannot even be certain that it
+actually _is_ better. It exists mostly for the sake of completeness. Between the
+Spring of 2014 and the Summer of 2015 I’ve used anishtro and never looked back.
+I don’t think it’s worth re-learning.
+
+Shortly after that, I used two different data sources and came up with yet a
+variation (called anishtro3):
+
+    ·pucj kldwq
+    anisb vhtro
+    ··yfz xmg··
+
+       e   ·
+
+It seems like you can create endless variations, all with the same base:
+
+    ·     u  c  j    k        w  q
+    a  n  i  s  bv   bv h  t  r  o
+    ·  ·  y  fg xz   xz       ·  ·
+
+       e   ·
+
+The keys with two letters should have either of those two (depending on how the
+others are placed). The empty keys should have one of D, F, G, L, M and P.
+
+Which one of all of those variations is the best is difficult to say, perhaps
+even impossible.
+
+
 Customization
 =============
 
@@ -138,27 +166,41 @@ If you like numbers, though, here is a table that compares a few well-known
 layout using _my_ analyzer (see the [“Tools”] section below, and [Analyzing a
 full layout](data.md#analyzing-a-full-layout)).
 
-| Layout     | Same finger | Rolls  |
-| ---------- | ----------: | -----: |
-|  QWERTY    |       7.78% |  6.67% |
-| [QGMLWB]   |       5.42% |  4.04% |
-| [Dvorak]   |       2.85% |  5.30% |
-| [Workman]  |       2.86% |  8.54% |
-| [Colemak]  |       1.35% |  7.99% |
-| [Arensito] |       1.28% | 13.64% |
-| [Maltron]  |       1.04% | 13.67% |
-|  anishtro  |       0.89% | 14.65% |
-|  anishtro2 |       0.88% | 14.66% |
+[English Letter Frequency Counts: Mayzner Revisited or ETAOIN SRHLDCU][norvig]
+by Peter Norvig is an analysis of English letter frequencies using the Google
+Corpus Data.
 
-“Same finger” is the percentage of all your keypresses that will be performed by
-the same finger (excluding typing the _same_ letter twice in a row), which tells
-how _bad_ a layout is.
+[Michael Dickens] has a [repository that contains a program to optimize keyboard
+layouts][typing], as well as some English letter frequency data.
 
-“Rolls” is the percentage of all your keypresses that will be part of a _roll,_
-as described in the [“Who should use it?”] section. This is not essential, but a
-big bonus. (When creating anishtro, I expected having to choose between less
-same finger usage and more rolls, but it turned out that anishtro _both_ got the
-least same finger usage _and_ the most rolls. How convenient.)
+For comparison with my own data, I also used their calculated bigram
+frequencies. Having three different data sets made by three different people in
+different ways all giving about the same results makes me confident that the
+numbers are reliable.
+
+| Layout     | Same finger | Rolls  | S.f. Norvig | R. Norvig | S.f. Dickens | R. Dickens |
+| ---------- | ----------: | -----: | ----------: | --------: | -----------: | ---------: |
+|  QWERTY    |       7.78% |  6.67% |       6.94% |     6.68% |        6.87% |      6.54% |
+| [QGMLWB]   |       5.42% |  4.04% |       4.62% |     3.94% |        4.86% |      4.16% |
+| [Dvorak]   |       2.85% |  5.30% |       2.50% |     5.88% |        2.61% |      5.63% |
+| [Workman]  |       2.86% |  8.54% |       2.82% |     8.97% |        2.94% |      8.75% |
+| [Colemak]  |       1.35% |  7.99% |       1.07% |     7.68% |        1.25% |      7.44% |
+| [Arensito] |       1.28% | 13.64% |       0.95% |    13.85% |        1.05% |     13.27% |
+| [Maltron]  |       1.04% | 13.67% |       0.73% |    13.33% |        0.85% |     12.83% |
+|  anishtro  |       0.89% | 14.65% |       0.70% |    14.38% |        0.80% |     13.73% |
+|  anishtro2 |       0.88% | 14.66% |       0.69% |    14.39% |        0.76% |     13.74% |
+|  anishtro3 |       0.94% | 14.50% |       0.68% |    14.17% |        0.74% |     13.66% |
+
+“Same finger” (abbreviated “S.f.” in some columns above) is the percentage of
+all your keypresses that will be performed by the same finger (excluding typing
+the _same_ letter twice in a row), which tells how _bad_ a layout is.
+
+“Rolls” (abbreviated “R.” in some columns above) is the percentage of all your
+keypresses that will be part of a _roll,_ as described in the [“Who should use
+it?”] section. This is not essential, but a big bonus. (When creating anishtro,
+I expected having to choose between less same finger usage and more rolls, but
+it turned out that anishtro _both_ got the least same finger usage _and_ the
+most rolls. How convenient.)
 
 Remember that the above table is made from _my_ ananlyzer, with _my_ opinions
 (as detailed in the [“Who should use it?”] section). For example, QGMLWB takes
@@ -171,6 +213,9 @@ Also note that Arensito seems to be almost as good as Maltron and anishtro, but
 it does not put a letter on a thumb key, making it have one less home key. In
 the above list, only Maltron and anishtro do. That’s their big advantage.
 
+[norvig]: http://norvig.com/mayzner.html
+[Michael Dickens]: http://mdickens.me/
+[typing]: https://github.com/michaeldickens/Typing
 [Arensito]: http://www.pvv.org/~hakonhal/main.cgi/keyboard
 [Dvorak]: https://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard
 [Colemak]: http://colemak.com/
@@ -188,18 +233,21 @@ See [scripts/repl.js] for how to interactively play with data to analyse layouts
 
 Before using that file you need to run `npm install` to get all dependencies.
 
-You also need some data to work with. Either download [the data I used][gist],
-or see [./create-data] for how to create your own. Or do something entirely
-different.
+You also need some data to work with. You may download [the data I
+used][my-data], or see [./create-data] for how to create your own. [Norvig’s
+data][norvig-gist] and [Dickens’ data][dickens-gist] are also available. Or do
+something entirely different.
 
 It might be a good idea to have a look at the two dependencies as well:
 [wikipedia-gather] and [text-frequencies-analysis].
 
-Finally, [scripts/layout.js] is the file that does the actual analysis of
-layouts. Have a look at it for more information, and run `npm test` to test it.
+[scripts/layout.js] is the file that does the actual analysis of layouts. Have a
+look at it for more information, and run `npm test` to test it.
 
 [Node.js]: http://nodejs.org/
-[gist]: https://gist.github.com/lydell/e807977107e041c147ab
+[my-data]: https://gist.github.com/lydell/e807977107e041c147ab
+[norvig-gist]: https://gist.github.com/lydell/c439049abac2c9226e53
+[dickens-gist]: https://gist.github.com/lydell/259ab9f2ddaa1a64e6bd
 [wikipedia-gather]: https://github.com/lydell/wikipedia-gather
 [text-frequencies-analysis]: https://github.com/lydell/text-frequencies-analysis
 

@@ -55,6 +55,8 @@ module.exports = {
     " inarg", "bhtso ",
     " ;-,wk", "zfd./ "
   ],
+
+  // Results.
   anishtro: [
     " qlucj", "kpmw- ",
     " anisv", "bhtro ",
@@ -64,6 +66,11 @@ module.exports = {
     " -lucj", "kdgwq ",
     " anisv", "bhtro ",
     " /;yfx", "zpm., "
+  ],
+  anishtro3: [
+    " -pucj", "kldwq ",
+    " anisb", "vhtro ",
+    " /;yfz", "xmg., "
   ],
 
   // Additional.
