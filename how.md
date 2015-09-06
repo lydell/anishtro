@@ -419,8 +419,44 @@ A; that’s the only way of getting rid of AU.
 Logical data-backed choices
 ---------------------------
 
-I started looking for the best possible homerow, when it comes to rolls, using
-trial and error. The top three results were:
+I started looking for the best possible home row. I already knew _which_ letters
+to place there, but not _in what order_ (apart from some of the vowel-protecting
+business). It might, at first, seem like you don’t need to think about same
+finger usage (and can concentrate solely on rolls) when laying out keys on a
+_row,_ but in fact you do, because the index fingers have twice as many keys to
+operate due to the center columns. Therefore it is a good idea, if possible, to
+choose less common letters for the index fingers. That’s S and H:
+
+    > filter(relative(filter(chars, /[a-z]/)), /[ahinorst]/)
+    [ [ 'a', 8.936668720347656 ],
+      [ 't', 8.372263304218912 ],
+      [ 'i', 7.662823579152817 ],
+      [ 'n', 7.504821827844436 ],
+      [ 'o', 7.320885191794002 ],
+      [ 'r', 6.712008484929269 ],
+      [ 's', 6.5945375302410305 ],
+      [ 'h', 4.56730409185131 ] ]
+
+One thing I noticed was that H only forms a good roll together with T:
+
+    > filter(relative(pairs), /h/, /[ainorst]/)
+    [ [ 'ht', 3.1143912946997787 ],
+      [ 'ah', 0.7443648264407408 ],
+      [ 'hi', 0.7014062782069035 ],
+      [ 'ho', 0.4983682993328882 ],
+      [ 'hs', 0.3962091990778266 ],
+      [ 'hr', 0.11338366975144043 ],
+      [ 'hn', 0.057972056511827956 ] ]
+
+That’s yet a reason to put H on an index finger. The index fingers (as well as
+the pinkies) can only be part of _one_ roll each, while the middle and ring
+fingers can be part of _two_ rolls each (having other fingers on both sides).
+
+Another thing I realized was that pairs consisting of two vowels are not as
+common as pairs consisting of one vowel and one consonant. So avoiding having
+two vowels beside each other would increase rolls.
+
+From there I continued with trial and error. The top three results were:
 
     > homeRow("anis", "htor") // The best I could find.
     14.099003289264397
@@ -431,6 +467,10 @@ trial and error. The top three results were:
 
 (As you can see, neither the finished anishtro nor Maltron chose the best
 possible home row in terms of rolls. That’s because of same finger usage.)
+
+(Another thing to notice is that mirroring the entire home row of course gives
+the same results. I found it better to keep A in its QWERTY position and O on
+the same hand as QWERTY.)
 
 It might seem the easiest to just have gone with the Maltron layout at this
 point, but Maltron does not follow my rating of the keys. Especially the
