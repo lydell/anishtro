@@ -57,7 +57,7 @@ The layout is suitable if:
 - You are looking for a layout that is “fully optimized,” not a compromise
   between comfort and QWERTY similarity. This also means that you are ready to
   re-learn your typing from scratch, since only two letters remain on their
-  QWERTY positions: a and q. (You can swap g and v if you want yet two, though.)
+  QWERTY positions: A and Q. (You can swap G and V if you want yet two, though.)
 
 - You like “rolling” (horizontally) between the keys marked with uppercase
   letters, in either direction. (Again, mirror it for the right hand.)
@@ -112,7 +112,7 @@ variation (called anishtro3):
 
        e   ·
 
-It seems like you can create endless variations, all with the same base:
+It seems almost as if endless variations can be made, all with the same base:
 
     ·     u  c  j    k        w  q
     a  n  i  s  bv   bv h  t  r  o
@@ -137,7 +137,7 @@ There are a couple of changes that you could make without reducing the amount of
   possible, this is the way to go!)
 - Swap E and Space. If you’re used to typing space with your left thumb since
   before, why re-learn?
-- Swap G and V, as mentioned in the previous section.
+- Swap G and V.
 - Swap J and X, as well as K and Z, if you don’t agree on the relative rating of
   those keys.
 - Swap the top and bottom row.
