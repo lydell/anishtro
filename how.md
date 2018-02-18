@@ -891,6 +891,6 @@ You may read more about these data sources and see more comparisons in the
 [Arensito]: http://www.pvv.org/~hakonhal/main.cgi/keyboard
 [Colemak]: http://colemak.com/
 [Maltron]: http://www.maltron.com/keyboard-info/the-maltron-letter-layout-advantage
-[proword]: http://mostergonomickeyboard.blogspot.se/2011/02/most-ergonomic-and-efficient-keyboard.html
+[proword]: https://mostergonomickeyboard.blogspot.se/2011/02/most-ergonomic-keyboard-most-efficient.html
 [wikipedia-gather]: https://github.com/lydell/wikipedia-gather
 [text-frequencies-analysis]: https://github.com/lydell/text-frequencies-analysis/
